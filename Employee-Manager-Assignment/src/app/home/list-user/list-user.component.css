@@ -1,0 +1,74 @@
+.right-pannel{
+    width: 77%;
+    float: right;
+    background-color: darkslategray;
+    height: 550px;
+    margin: 1% 1% 1% 1%;
+    overflow: auto;
+    padding-bottom: 1%;
+}
+
+.body{
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 77%;
+    height: 570px;
+    background-color: darkslategray;
+    font-weight: bold;
+    overflow: auto;
+}
+table {
+    background-color: white;
+    width: 100%;
+  }
+
+h1{
+    text-align: center;
+    color: white;
+    font-weight: 800;
+}  
+
+table{
+    border: 1px solid gray;
+}
+
+.filter{
+    /* border: 1px solid black; */
+    background-color: rgb(85, 120, 172);
+    padding: 10px;
+    /* background-color: darkslategray; */
+    /* width: 102%; */
+    text-align: left;
+}
+
+select  {
+    padding: 5px;
+}
+input {
+    padding-bottom: 10px;
+}
+
+.float-right{
+float: right;
+}
+
+.btn-size{
+    width: 100%;
+}
+
+td{
+    border: 1px solid black;
+}
+ th{
+     background-color: lightgray;
+    border: 1px solid black;
+}
+
+.glyphicon-search{
+    background-color: white;
+    padding: 4px 10px 15px;
+}
+
+.btn-danger{
+    margin-left: 15px;
+}

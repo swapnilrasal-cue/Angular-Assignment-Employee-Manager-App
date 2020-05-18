@@ -1,0 +1,35 @@
+.right-pannel{
+    width: 77%;
+    float: right;
+    background-color: darkslategray;
+    height: 550px;
+    margin: 1% 1% 1% 1%;
+    overflow: auto;
+}
+
+.form-container{
+    padding: 15px;
+    background-color: black;
+    border: 1px solid gray;
+    text-align: left;
+    margin-left: 25%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: white;
+}
+
+h2{
+    text-align: center;
+}
+
+.form-submit-button{
+text-align: center;
+padding-top: 10px ;
+margin: 3% 30%;
+width: 40%;
+}
+/* 
+.half-page{
+    padding: 20% 45%;
+
+} */

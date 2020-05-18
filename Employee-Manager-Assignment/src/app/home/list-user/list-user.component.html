@@ -1,0 +1,84 @@
+<div class="right-pannel body">
+
+    <h1>Employee List </h1>
+    <hr>
+    <div class="filter"> 
+       
+    <label  style="color: white;">Filter By :</label>
+    <select name="filters" id="filterBy" (change)="showFurtherFilters()">
+        <option value="Select">Select</option>
+        <option value="Role">Role</option>
+        <option value="Status">Status</option>
+        <!-- <option value="Date">Date</option> -->
+    </select>
+  
+    <select name="filters" id="filterByRole" [(ngModel)]="filterRole">
+      <option value="Showall" selected>Select</option>
+      <option value="Admin">Admin</option>
+      <option value="Employee">Employee</option>
+  </select>
+  
+    <select name="filters" id="filterByStatus" [(ngModel)]="filterStatus">
+        <option value="false">Activate</option>
+        <option value="true">InActivate</option>
+    </select>
+  
+    <button class="btn btn-danger" (click)="clearFilterValues()">  Clear</button>
+
+  <span style="float: right;">
+      <input type="text" #myInput [(ngModel)]="name" (input)="search()"
+      placeholder="search here"
+      />
+      <span><i class="glyphicon glyphicon-search"></i></span>
+  </span>
+
+  </div>
+  
+  
+  
+  
+    <h1 id="noDataFound" *ngIf="users.length == 0">No Data Found..!!</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <!-- <th>Select</th> -->
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Password</th>
+                <th>Date</th>
+                <th>Gender</th>
+                <th>Status</th>
+                <th>Update</th>
+                <th>Delete</th>
+                <th>Change Status</th>
+  
+            </tr>
+        </thead>
+  
+        <tbody>
+            <tr 
+                *ngFor="let user of users | statusFilter :  filterStatus | roleFilter : filterRole  let i=index">
+                <!-- <td><input type="checkbox" ></td> -->
+               
+                <td>{{ user.name}}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role}}</td>
+                <td>{{ user.password}}</td>
+                <td>{{ user.date}}</td>
+                <td>{{ user.gender}}</td>
+                <td>{{ user.disabled }}</td>
+                <td><button class="btn btn-primary" (click)="updateRecord(user.id)">Update </button></td>
+                <td><button class="btn btn-danger" (click)="deleteRecord(user.id)">Delete</button></td>
+                <td>
+                    <button class="btn btn-success" (click)="onChangeStatus(user.disabled,user.email)">
+                        <span *ngIf="user.disabled == 'false'">Deactivate</span> 
+                        <span *ngIf="user.disabled == 'true'">Activate</span>
+                    </button>
+                </td>
+            
+            </tr>
+          </tbody>
+    </table>
+  </div>
+  

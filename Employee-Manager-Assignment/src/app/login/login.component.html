@@ -1,0 +1,40 @@
+
+  <div class="container">
+    <div class="row">
+        <div class="half-page" *ngIf="isLoading">
+          <app-loading-spinner></app-loading-spinner>
+        </div>
+
+      <div class="col-xs-12 col-sm-5 col-md-6 col-sm-offset-3  form-container" *ngIf="!isLoading">
+        <h2> Login</h2>
+        <hr>
+        <div class="alert alert-danger" *ngIf="error">
+            <p>{{ error }}</p>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="Login()" >
+            
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              class="form-control">
+          </div>
+            <button class="btn btn-primary submmit-btn" type="submit"
+            [disabled]="!loginForm.valid"
+            >Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

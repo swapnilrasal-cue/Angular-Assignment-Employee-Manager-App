@@ -1,0 +1,19 @@
+.form-container{
+    padding: 15px;
+    border: 1px solid gray;
+}
+
+h2{
+    text-align: center;
+}
+
+.half-page{
+    padding: 20% 45%;
+
+}
+
+.submmit-btn{
+    width: 40%;
+    padding:10px;
+    margin-left: 30%;
+}

@@ -1,0 +1,36 @@
+.form-container{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 15px;
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+
+.main-body{
+    margin: 1%;
+    width: 98%;
+    height: 570px;
+    background-color: #B0C4DE;
+    text-align: center;
+    /* padding-top: 15%; */
+    font-weight: bold;
+    overflow: auto;
+}
+
+h2{
+    text-align: center;
+}
+
+.form-submit-button{
+    text-align: center;
+padding-top: 10px ;
+margin: 3% 30%;
+width: 40%;
+}
+
+.half-page{
+    padding: 20% 45%;
+
+}

@@ -1,0 +1,25 @@
+
+<div class="not-admin" *ngIf="!isAllowed">
+    <h1 >Welcome to Employee Manager Application</h1>        
+    <!-- <div class="left-pannel" *ngIf="isAllowed"> -->
+    <!-- </div >         -->
+</div>
+
+<div class="admin" *ngIf="isAllowed">
+    <div class="left-pannel" >
+ 
+    <h2>Admin Pannel</h2>
+    <hr>    
+    <ul>  
+        <li  >  
+            <a  routerLink="/home/addUser">Add User  <i class="glyphicon glyphicon-user"></i></a> 
+        </li>
+      
+        <li >  
+            <a  routerLink="/home/listUser">User List<i class="glyphicon glyphicon-list-alt"></i></a> 
+        </li>
+    </ul>
+
+    </div >        
+   <router-outlet></router-outlet>
+</div>

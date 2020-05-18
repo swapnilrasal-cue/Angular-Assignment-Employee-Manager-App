@@ -1,0 +1,18 @@
+li:hover{
+    background-color: cornsilk;
+    opacity: 0.6;
+    }
+    
+    .navbar{
+    background-color:  darkslategray;
+    }
+    
+    .navbar-brand , li a{
+        color: cornsilk;
+    }
+    
+    li a:focus {
+        color: black;
+        background-color: white;
+      }
+    

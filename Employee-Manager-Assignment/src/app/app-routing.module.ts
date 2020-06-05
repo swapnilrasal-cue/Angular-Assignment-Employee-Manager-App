@@ -12,7 +12,7 @@ import { EditUserComponent } from './home/edit-user/edit-user.component';
 
 
 const routes: Routes = [
-
+  {path : "" , redirectTo : 'login', pathMatch : 'full'},
   {path : 'login' , component : LoginComponent},
   {path : 'home' , component : HomeComponent,canActivate : [AuthenticationGuard],  
     children :  [

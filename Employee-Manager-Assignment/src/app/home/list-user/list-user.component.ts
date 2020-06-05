@@ -6,7 +6,6 @@ import { EventEmitter } from 'protractor';
 import { UserService } from '../../Services/user.service';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-// import { FilterService } from '../../Services/filter.service';
 
 @Component({
   selector: 'app-list-user',
@@ -15,21 +14,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ListUserComponent implements OnInit {
 
-  // @Input() searchModel;
-  // updateUserRecords = [];
-  
-  // SeachModelChange = new BehaviorSubject<User>(null);
-
    name : string;
    users : User[] = [];
    filterStatus: string = '';
    filterRole: string = '';
    userDetails : User;
-
-  //  @Output() passTodoId = new EventEmitter<string>();
-
-
    postsArray  = [];
+  
   constructor(private http : HttpClient,private userService : UserService,
               private router : Router) { }
   
@@ -107,15 +98,6 @@ export class ListUserComponent implements OnInit {
      });
   }
 
-  // search(term: string) {
-  //   if(!term) {
-  //       this.users;
-  //   } else {
-  //      this.users.filter(x => 
-  //        x.name.trim().toLowerCase().includes(term.trim().toLowerCase())
-  //     );
-  //   }
-  // }
   
   search(){
     if(this.name != ""){
@@ -142,8 +124,6 @@ export class ListUserComponent implements OnInit {
   this.userService.deactiveUser(this.users);
   
   }
-
-
 
 }
 

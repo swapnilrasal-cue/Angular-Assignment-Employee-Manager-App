@@ -60,7 +60,6 @@ export class AuthenticationService {
       this.autoLogout(expirationIn * 1000);      
       localStorage.setItem('localId', user.id);
       localStorage.setItem('Data', JSON.stringify(user));
-      // console.log(localStorage.getItem('Data'));
     }
   
   
@@ -100,7 +99,7 @@ export class AuthenticationService {
     }
   
      autoLogout(expirationDuration : number){
-      console.log("Tokken Expires in : " +expirationDuration);
+      // console.log("Tokken Expires in : " +expirationDuration);
       this.tokenExpirationTimer =  setTimeout(()=>{
          this.onLogout();
        },expirationDuration
@@ -186,13 +185,13 @@ export class AuthenticationService {
   
     
     updateRecord(id){
-      console.log("updateUserRecord function");
+      // console.log("updateUserRecord function");
       this.updateUserRecords = null;
       var user = this.http.
       get
       (this.apiUrl + '/users/'+id+'.json').pipe(tap(
         Response=> {
-         console.log(Response);
+        //  console.log(Response);
         this.updateUserRecords = Response;
         //  this.updateUserRecords.push(Response);
         }));
@@ -200,7 +199,7 @@ export class AuthenticationService {
     }
 
     getUpdateRecord(){
-      console.log(this.updateUserRecords);
+      // console.log(this.updateUserRecords);
       return this.updateUserRecords;      
     }
 

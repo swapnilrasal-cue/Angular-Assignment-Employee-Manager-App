@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
      setDeactivateAccount() {
       this.authenticationService.getDeactiveUsers().subscribe(Response => {
           this.deactivateUser = Response;
-          console.log("response"+this.deactivateUser)
+          // console.log("response"+this.deactivateUser)
      });
      }
   

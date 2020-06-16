@@ -33,6 +33,10 @@
               >
           </div>
 
+           <div *ngIf="EditUserForm.get('name').invalid && EditUserForm.get('name').touched">
+            <p class="error-message">* Name feild should not be empty.</p>
+          </div>
+
          <div class="form-group">
             <label for="disabled">Status</label>
             <select
@@ -64,6 +68,10 @@
               class="form-control">
           </div>
 
+          <div *ngIf="EditUserForm.get('password').invalid && EditUserForm.get('password').touched">
+            <p class="error-message">* Password Must be greater than 7 digits.</p>
+          </div>
+
           <div class="form-group">
             <label for="date">Date Created</label>
             <input
@@ -71,6 +79,10 @@
               id="date"
               formControlName="date"
               class="form-control">
+          </div>
+
+          <div *ngIf="EditUserForm.get('date').invalid && EditUserForm.get('date').touched">
+            <p class="error-message">* Please select valid date.</p>
           </div>
 
           <div class="radio" *ngFor="let gender of genders">

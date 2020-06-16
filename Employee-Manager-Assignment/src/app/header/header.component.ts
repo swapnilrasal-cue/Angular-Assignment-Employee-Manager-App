@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
         this.isAuthenticated = true;
         let userStatus = JSON.parse(localStorage.getItem('Data'));
       }
-      console.log(userAuthentication);
+      // console.log(userAuthentication);
     })
   }
   

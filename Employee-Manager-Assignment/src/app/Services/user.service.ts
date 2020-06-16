@@ -51,12 +51,12 @@ export class UserService {
           } ),
             take(1), exhaustMap((responseData) => {
             this.users.push(newUser);
-            console.log(this.users);
+            // console.log(this.users);
             return this.http.
             post
             (this.apiUrl + '/users.json', newUser);
             // console.log(newUser);
-            console.log("the array od users : " +this.users);
+            // console.log("the array od users : " +this.users);
           })
           );    
       }
@@ -115,7 +115,7 @@ export class UserService {
       }
     
        autoLogout(expirationDuration : number){
-        console.log("Tokken Expires in : " +expirationDuration);
+        // console.log("Tokken Expires in : " +expirationDuration);
         this.tokenExpirationTimer =  setTimeout(()=>{
            this.onLogout();
          },expirationDuration
@@ -129,7 +129,7 @@ export class UserService {
     
     
       deleteUserRecord(id){
-        console.log("Delete function");
+        // console.log("Delete function");
         return this.http.
         delete
         (this.apiUrl + '/users/'+id+'.json');
@@ -167,7 +167,7 @@ export class UserService {
             this.apiUrl + 'users.json'
           )
           .subscribe((users) => {
-            console.log(users);
+            // console.log(users);
             this.setUsers(users)
           });
       }
@@ -205,13 +205,13 @@ export class UserService {
     }
       
     updateRecord(id){
-        console.log("updateUserRecord function");
+        // console.log("updateUserRecord function");
         this.updateUserRecords = null;
         var user = this.http.
         get
         (this.apiUrl + '/users/'+id+'.json').pipe(tap(
           Response=> {
-           console.log(Response);
+          //  console.log(Response);
           this.updateUserRecords = Response;
           //  this.updateUserRecords.push(Response);
           }));
@@ -219,7 +219,7 @@ export class UserService {
       }
 
       getUpdateRecord(){
-        console.log(this.updateUserRecords);
+        // console.log(this.updateUserRecords);
         return this.updateUserRecords;        
       }
 

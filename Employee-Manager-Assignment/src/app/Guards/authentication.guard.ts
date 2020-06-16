@@ -20,12 +20,6 @@ return this.authenticationService.userAuthentication.pipe(
      return true;
  }
  return this.router.createUrlTree(['/login']);
-}),
-// tap(isAuth => {
-//     if(!isAuth){
-//      this.router.navigate(['/login']);
-//     }
-// }) 
-);
+}));
 }
 }

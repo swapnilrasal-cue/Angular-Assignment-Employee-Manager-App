@@ -24,14 +24,14 @@ this.authenticationService.usersChangedState.subscribe((users) => {
 this.users = users;
 });
 const test = this.authenticationService.getCurrentLoggedInUserInfo();
-console.log("loggedInUsersfsf "+test.role);
+// console.log("loggedInUsersfsf "+test.role);
 let role : string = test.role;
-console.log("loggedInUsersfsf "+role);
+// console.log("loggedInUsersfsf "+role);
 // let test = this.userService.getCurrentLoggedInUserInfo();
 
 if( role === 'Admin'){
 this.isAllowed = true;
-console.log(this.isAllowed);
+// console.log(this.isAllowed);
 }
 else{
 this.isAllowed = false;

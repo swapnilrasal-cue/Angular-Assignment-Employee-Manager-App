@@ -40,7 +40,7 @@ export class EditUserComponent implements OnInit {
           'email': new FormControl(newemail, [Validators.required, Validators.email]),
           'disabled': new FormControl(newdisabled,Validators.required), 
           'role' : new FormControl(newrole,Validators.required),
-          'password': new FormControl(newpassword,Validators.required),
+          'password': new FormControl(newpassword,[Validators.required,Validators.minLength(7)]),
           'date': new FormControl(newdate,Validators.required),
           'gender': new FormControl(newgender,Validators.required),
        });

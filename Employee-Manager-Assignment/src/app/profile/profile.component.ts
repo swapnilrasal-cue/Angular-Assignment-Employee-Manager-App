@@ -38,18 +38,9 @@ export class ProfileComponent implements OnInit,AfterViewInit {
       this.users = users;
       });
   
-      // const userId = localStorage.getItem('localId');
-      // console.log("user id is :"+userId);
-      // this.authenticationService.updateRecord(userId);
-      // this.updateUser = this.authenticationService.getUpdateRecord();
-      // console.log("user id is :"+this.updateUser);
 
       const loggedInUser = this.authenticationService.getCurrentLoggedInUserInfo();
-      console.log("loggedInUser "+loggedInUser);
-  
-      // if (!loggedInUser) {
-      //   this.router.navigate(['/login']);
-      // }
+      // console.log("loggedInUser "+loggedInUser);
       
       let newname = loggedInUser.name;
       let newemail = loggedInUser.email;
@@ -64,7 +55,7 @@ export class ProfileComponent implements OnInit,AfterViewInit {
         'email': new FormControl(newemail, [Validators.required, Validators.email]),
         // 'status': new FormControl(newstatus,Validators.required), 
         'role' : new FormControl(newrole,Validators.required),
-        'password': new FormControl(newpassword,Validators.required),
+        'password': new FormControl(newpassword,[Validators.required,Validators.minLength(7)]),
         'date': new FormControl(newdate,Validators.required),
         'gender': new FormControl(newgender,Validators.required),
      });
@@ -73,7 +64,6 @@ export class ProfileComponent implements OnInit,AfterViewInit {
         this.isLoading = true;
         this.authenticationService.updateUser(this.EditUserForm.value)
          .subscribe((users) => {
-          // this.authenticationService.usersChangedState.next(users);
           this.isLoading = false;
           this.router.navigate(['/home']);
   

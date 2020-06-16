@@ -34,3 +34,7 @@ width: 40%;
     padding: 20% 45%;
 
 }
+
+.error-message{
+    color: red;
+}

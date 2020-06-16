@@ -17,3 +17,7 @@ h2{
     padding:10px;
     margin-left: 30%;
 }
+
+.error-message{
+    color: red;
+}

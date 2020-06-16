@@ -2,10 +2,8 @@ import { Component, OnInit, Output, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 import { User } from '../../Models/user.model';
-import { EventEmitter } from 'protractor';
 import { UserService } from '../../Services/user.service';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-list-user',

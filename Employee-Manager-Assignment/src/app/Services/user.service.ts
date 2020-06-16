@@ -205,7 +205,6 @@ export class UserService {
     }
       
     updateRecord(id){
-        // console.log("updateUserRecord function");
         this.updateUserRecords = null;
         var user = this.http.
         get
@@ -213,7 +212,6 @@ export class UserService {
           Response=> {
           //  console.log(Response);
           this.updateUserRecords = Response;
-          //  this.updateUserRecords.push(Response);
           }));
         return user;
       }
